@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+/*eslint-disable*/
+import React from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
+import Movies from './components/Movies';
+import MovieDetail from './components/MovieDetail'
+import Theater from './components/Theater';
+import About from './components/About';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    <div className="background">
+      <NavBar />
+      
+            <BrowserRouter>
+                        <Routes>
+                            <Route exact path='/' element={<Movies />} />
+                            <Route path='/movies' element={<Movies />} />
+                            <Route path='/movies/detail' element={<MovieDetail />} />
+                            <Route path='/theater' element={<Theater />} />
+                            <Route path='/about' element={<About />} />
+                        </Routes>
+            </BrowserRouter>
+
+        
     </div>
+
+
+
+
+
+
+
   );
 }
 
