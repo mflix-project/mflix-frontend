@@ -8,7 +8,7 @@ export default function MovieDetail(){
         <>
       
         
-        <Card className="p-4" style={{ width: '70%' }}>
+        <Card className="p-4"  style={{ width: '70%' }}>
           <Container >
             <Row>
               <Col className ="center" sm={3} >
