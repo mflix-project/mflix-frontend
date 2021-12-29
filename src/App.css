@@ -1,4 +1,4 @@
-.container{
+.cntCenter{
   padding-top:20px;
   text-align: center;
  
@@ -9,10 +9,7 @@
   margin-bottom: 0px;
 }
 
-.pagination{
-  display: flex;
-  justify-content: center;
-}
+
 
 .background{
   background-color: rosybrown;
@@ -20,4 +17,12 @@
 
 
 
+.card {
+  margin: 0 auto; 
+  float: none; 
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
 

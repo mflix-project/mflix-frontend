@@ -5,7 +5,7 @@ export default function Loading(){
 
     return (
     <div style={{background:'white'}}>
-        <Container  style={{ height: '85vh'}}>
+        <Container className="cntCenter" style={{ height: '85vh'}}>
             <Row>
                 <Col>
                     <Image src={loading} style={{ width: '200px', paddingTop:'10%'}} />

@@ -4,7 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Movies from './components/Movies';
 import MovieDetail from './components/MovieDetail'
-import Theater from './components/Theater';
+import Theaters from './components/Theaters';
 import About from './components/About';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -22,7 +22,7 @@ function App() {
                             <Route exact path='/' element={<Movies />} />
                             <Route path='/movies' element={<Movies />} />
                             <Route path='/movies/detail' element={<MovieDetail />} />
-                            <Route path='/theater' element={<Theater />} />
+                            <Route path='/theaters' element={<Theaters />} />
                             <Route path='/about' element={<About />} />
                         </Routes>
             </BrowserRouter>

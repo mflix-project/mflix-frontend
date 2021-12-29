@@ -4,7 +4,7 @@ import {Pagination} from 'react-bootstrap';
 export default function Page(){
     return(
         
-        <Pagination>
+        <Pagination className="center">
             <Pagination.First />
             <Pagination.Prev />
             <Pagination.Item>{1}</Pagination.Item>

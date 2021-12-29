@@ -25,7 +25,7 @@ export default function NavBar(){
                         navbarScroll
                     >
                     <Nav.Link href="/movies">Movie List</Nav.Link>
-                    <Nav.Link href="/theater">Theater List</Nav.Link>
+                    <Nav.Link href="/theaters">Theater List</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
                     </Nav>
 

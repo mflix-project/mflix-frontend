@@ -9,11 +9,11 @@ import axios from "axios";
 
 export default function Movies(){
  
-   const [data, setData] = useState(null);
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(() => {
-    axios("http://mflix-jun.herokuapp.com/api/theaters")
+    axios("http://mflix-jun.herokuapp.com/api/movies")
     .then((response) => {
     setData(response.data);
     })
@@ -43,14 +43,14 @@ export default function Movies(){
         data.map((data,i)=>{
           return(
             <div key={i}>
-            <p>{data.location._id}</p>
+            <p>{data.title}</p>
             </div>
 
           );
         })
         
         }</p>
-        {/* <Container >
+        {/* <Container className="cntCenter" >
         <Row >
           <Col>
             <Link to='/movies/detail'>
