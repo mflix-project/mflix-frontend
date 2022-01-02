@@ -7,7 +7,7 @@ import MovieDetail from './components/MovieDetail'
 import Theaters from './components/Theaters';
 import About from './components/About';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import moment from 'moment'
 import axios from "axios";
 import Loading from './components/Loading';
 import { useEffect, useState} from 'react';

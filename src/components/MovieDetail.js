@@ -2,6 +2,8 @@
 import * as React from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import {Button, Card, Container,Row, Col, Image} from 'react-bootstrap';
+import moment from 'moment'
+import noImage from './noImage.png'
 
 export default function MovieDetail(props){
 
@@ -11,6 +13,35 @@ export default function MovieDetail(props){
         return id == val._id;
       });
 
+      function min(runTime){
+        
+        if(runTime>1)
+        {
+         return "mins"
+        }
+        else{
+          return "min" 
+        }
+      }
+      function writer(){
+        if(matchedMovie.writers)
+        {
+          return matchedMovie.writers.join(', ')
+        }
+      
+      }
+
+      function poster(){
+        if(matchedMovie.poster)
+        {
+            return matchedMovie.poster;
+         }
+        else
+        {   
+            return noImage;
+        }
+    }
+
     return (
         <>
       
@@ -19,14 +50,14 @@ export default function MovieDetail(props){
           <Container >
             <Row>
               <Col className ="center" sm={3} >
-                <Image variant="top" src={matchedMovie.poster} width={150} height = {220} />
+                 <img width={150} height = {220} src={poster()} onError={(e)=>{e.target.onerror = null; e.target.src=noImage}}/>
                 </Col>
               <Col sm={9}>
                 <h1 style={{ fontSize: "2rem" }}>{matchedMovie.title}</h1>
                 <div  className="p-3">
-                  <p>Release date: {matchedMovie.released}</p>
-                  <p>Length: {matchedMovie.runtime}mins</p>
-                  <p>Genres: {matchedMovie.genres}</p>
+                  <p>Release date: {moment(matchedMovie.released).format('ll')}</p>
+                  <p>Length: {matchedMovie.runtime}{min(matchedMovie.runtime)}</p>
+                  <p>Genres: {matchedMovie.genres.join(", ")}</p>
                 </div>
               </Col>
             </Row>
@@ -41,22 +72,22 @@ export default function MovieDetail(props){
            </Card.Text>
            <Card.Title>Cast</Card.Title>
            <Card.Text>
-           {matchedMovie.cast}
+           {matchedMovie.cast.join(", ")}
            <hr/>
            </Card.Text>
            <Card.Title>Direcotrs</Card.Title>
            <Card.Text>
-           {matchedMovie.directors}   
+           {matchedMovie.directors.join(", ")}   
            <hr/>
            </Card.Text>
            <Card.Title>Writers</Card.Title>
            <Card.Text>
-           {matchedMovie.writers}
+           {writer()}
            <hr/>
            </Card.Text>
            <Card.Title>Country</Card.Title>
            <Card.Text>
-           {matchedMovie.countries}
+           {matchedMovie.countries.join(", ")}
            </Card.Text>
            <div className ="center" >
            <Button variant="primary" onClick={()=>{
