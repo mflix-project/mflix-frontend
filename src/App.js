@@ -7,19 +7,22 @@ import MovieDetail from './components/MovieDetail'
 import Theaters from './components/Theaters';
 import About from './components/About';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import moment from 'moment'
 import axios from "axios";
 import Loading from './components/Loading';
 import { useEffect, useState} from 'react';
-import {  Container, Row, Card} from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 
 function App() {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+ 
+
+
   useEffect(() => {
-  axios("https://mflix-jun.herokuapp.com/api/movies?page=1&perPage=15")
+  axios("https://mflix-jun.herokuapp.com/api/movies?page=1&perPage=14")
   .then((response) => {
   setData(response.data);
   })
@@ -49,7 +52,7 @@ function App() {
             <BrowserRouter>
                         <Routes>
                             <Route exact path='/' element={<Movies movie={data} />} />
-                            <Route path='/movies' element={<Movies movie={data} />} />
+                            <Route path='/movies' element={<Movies movie={data}  />} />
                             <Route path='/movies/:id' element={<MovieDetail movie={data} />} />
                             <Route path='/theaters' element={<Theaters />} />
                             <Route path='/about' element={<About />} />

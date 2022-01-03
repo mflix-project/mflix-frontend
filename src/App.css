@@ -32,3 +32,19 @@
   text-decoration: none;
   color: inherit;
 }
+
+.dropdownStyle{
+  float: right;
+  padding-right: 10%;
+  
+}
+
+.pageHeader{
+  display: inline;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  padding-left: 10%;
+  padding-top: 1%;
+  margin-bottom: 0;
+}
