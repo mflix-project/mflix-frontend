@@ -1,20 +1,20 @@
 /*eslint-disable*/
 import Movie from './Movie.js';
-import Page  from './Pagination';
+// import Page  from './Pagination';
 import {useState} from 'react';
-import {  Container, Row, Dropdown} from 'react-bootstrap';
+import { Container, Row, Dropdown} from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap';
 
 
 export default function Movies(props){
     
-    const [data, setData] = useState(props.movie);
-
+    
     function descendingOrder(){
       var movieArray = [...props.movie];
       var descendingArray = movieArray.sort((a,b)=>{
         return b.year-a.year;
       });
-      setData(descendingArray);
+      props.setData(descendingArray);
     };
 
     function ascendingOrder(){
@@ -22,7 +22,7 @@ export default function Movies(props){
       var ascendingArray = movieArray.sort((a,b)=>{
         return a.year-b.year;
       });
-     setData(ascendingArray);
+     props.setData(ascendingArray);
     };
 
     return(
@@ -45,16 +45,26 @@ export default function Movies(props){
 
         <Container className="cntCenter" >
         <Row >
-        {
-          data.map((val,i)=>{
+        {/* {data && data.length ? data.map((val,i)=>{
             return(
               <Movie key={i} movie={data} i={i} />
             )
-          })
-        }
+          }):null} */}
+          {
+            props.movie.map((val,i)=>{
+              return(
+                <Movie key={i} movie={props.movie} i={i} />
+              )
+            })
+          }
         </Row> 
       </Container>
-      <Page />
+      <Pagination className="center">
+        <Pagination.Prev onClick={props.previousPage}/>
+        <Pagination.Item disabled={true}>{props.page}</Pagination.Item>
+        <Pagination.Next onClick={props.nextPage} />
+      </Pagination>
+    
     </>
     )
 }

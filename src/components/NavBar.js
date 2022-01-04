@@ -1,9 +1,14 @@
+/* eslint-disable */
 import {Navbar, Container ,Nav, Form, FormControl, Button} from 'react-bootstrap';
 import Logo from './Mflix-logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function NavBar(){
+    
 
+  
     return(
         <>
             <Navbar bg="light" expand="lg">
@@ -29,14 +34,17 @@ export default function NavBar(){
                     <Nav.Link href="/about">About</Nav.Link>
                     </Nav>
 
-                    <Form className="d-flex">
+                    <Form className="d-flex" >
                     <FormControl
                         type="search"
                         placeholder="Search"
                         className="me-2"
                         aria-label="Search"
+                    
+                        
                     />
-                    <Button variant="outline-success">Search</Button>
+                    <Button variant="outline-dark">Search</Button>
+                            
                     </Form>
                 </Navbar.Collapse>
             </Container>
