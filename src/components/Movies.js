@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import Movie from './Movie.js';
-// import Page  from './Pagination';
 import {useState} from 'react';
 import { Container, Row, Dropdown} from 'react-bootstrap';
 import { Pagination } from 'react-bootstrap';
@@ -45,6 +44,7 @@ export default function Movies(props){
 
         <Container className="cntCenter" >
         <Row >
+          
         {/* {data && data.length ? data.map((val,i)=>{
             return(
               <Movie key={i} movie={data} i={i} />

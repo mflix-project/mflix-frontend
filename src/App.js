@@ -6,20 +6,21 @@ import Movies from './components/Movies';
 import MovieDetail from './components/MovieDetail'
 import Theaters from './components/Theaters';
 import About from './components/About';
-import {  Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import axios from "axios";
 import Loading from './components/Loading';
 import { useEffect, useState} from 'react';
-import { Pagination, Card} from 'react-bootstrap';
-import { useSearchParams } from 'react-router-dom';
+import {  Card} from 'react-bootstrap';
+import queryString from 'query-string';
+
 
 function App() {
   const perPage = 28;
-  // let location = useLocation();
   const [page, setPage] = useState(1);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [render,setRender] = useState(false);
 
   function previousPage() {
     if (page > 1) setPage(page - 1);
@@ -31,33 +32,33 @@ function App() {
 
 
 
-
   useEffect(() => {
-    
+     
       let url;
-      const query = new URLSearchParams(url);
-     // let query = queryString.parse(location.search);
-    
-      // if (query.has("title")) {
-      //     url = `https://mflix-jun.herokuapp.com/api/movies?title=${query.getAll("title")}`;
-      //   }
-      // else {
+      let query = queryString.parse(location.search);
+
+      if (query.title) {
+          url = `https://mflix-jun.herokuapp.com/api/movies?title=${query.title}`;
+        }
+      else {
         url = `https://mflix-jun.herokuapp.com/api/movies?page=${page}&perPage=${perPage}`;
-      //}
+      }
 
       axios(url)
       .then((response) => {
       setData(response.data);
+      
       })
       .catch((error) => {
-      console.error("Error fetching data: ", error);
-      setError(error);
+        console.error("Error fetching data: ", error);
+        setError(error);
       })
       .finally(() => {
       setLoading(false);
       });
-      }, [page, error]);
-  
+      setRender(false);
+     
+      }, [page,error,render]);
 
       
   if (loading) return (<Loading />);
@@ -73,7 +74,7 @@ function App() {
   return (
    
     <div className="background">
-      <NavBar />
+      <NavBar setRender={setRender} setPage={setPage}/>
                         <Routes>
                             <Route exact path='/' element={<Movies movie={data} setData={setData} previousPage={previousPage} nextPage={nextPage} page={page} />} />
                             <Route path='/movies' element={<Movies movie={data} setData={setData} previousPage={previousPage} nextPage={nextPage} page={page} />} />

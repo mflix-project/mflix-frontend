@@ -5,10 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function NavBar(){
+export default function NavBar(props){
     
-
-  
+    const [searchString, setSearchString] = useState('');
+    const navigate= useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate(`/movies?title=${searchString}`);
+        setSearchString('');
+        props.setRender(true);
+        props.setPage(1);
+    };
+   
     return(
         <>
             <Navbar bg="light" expand="lg">
@@ -34,16 +42,16 @@ export default function NavBar(){
                     <Nav.Link href="/about">About</Nav.Link>
                     </Nav>
 
-                    <Form className="d-flex" >
+                    <Form onSubmit={handleSubmit}className="d-flex" >
                     <FormControl
                         type="search"
                         placeholder="Search"
                         className="me-2"
                         aria-label="Search"
-                    
-                        
+                        value={searchString}
+                        onChange={(e)=>setSearchString(e.target.value)}
                     />
-                    <Button variant="outline-dark">Search</Button>
+                    <Button  type='submit' variant="outline-dark">Search</Button>
                             
                     </Form>
                 </Navbar.Collapse>
