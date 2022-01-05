@@ -56,18 +56,18 @@ function App() {
       .finally(() => {
       setLoading(false);
       });
-      setRender(false);
+      return setRender(false);
      
       }, [page,error,render]);
 
       
-  if (loading) return (<Loading />);
-  if (error) return  (
-    <Card className='p-3'style={{ width: '100rem' }}>
-        <Card.Title>Something is wrong while fetching data</Card.Title>
-        <Card.Text>{error.message}</Card.Text>
-    </Card>
-    );
+      if (loading) return (<Loading />);
+      if (error) return  (
+        <Card className='p-3'style={{ width: '100rem' }}>
+            <Card.Title>Something is wrong while fetching data</Card.Title>
+            <Card.Text>{error.message}</Card.Text>
+        </Card>
+        );
  
    
 

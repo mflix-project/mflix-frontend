@@ -1,3 +1,4 @@
+
 .cntCenter{
   padding-top:20px;
   text-align: center;
@@ -47,4 +48,12 @@
   padding-left: 10%;
   padding-top: 1%;
   margin-bottom: 0;
+}
+
+.non-found{
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 2%;
+  padding-left: 10%;
+  background: rosybrown;
 }

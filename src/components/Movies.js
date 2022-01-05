@@ -1,9 +1,8 @@
 /*eslint-disable*/
 import Movie from './Movie.js';
 import {useState} from 'react';
-import { Container, Row, Dropdown} from 'react-bootstrap';
-import { Pagination } from 'react-bootstrap';
-
+import { Container, Row, Dropdown, Card, Pagination} from 'react-bootstrap';
+import queryString from 'query-string';
 
 export default function Movies(props){
     
@@ -24,6 +23,7 @@ export default function Movies(props){
      props.setData(ascendingArray);
     };
 
+ 
     return(
       <>
  
@@ -41,9 +41,17 @@ export default function Movies(props){
         </Dropdown>
         </div>
         <br></br>
-
+       
+      {
+        !Array.isArray(props.movie)||props.movie.length===0?
+        <p className='non-found'>
+          No Results Found For{' '}
+          "{queryString.parse(location.search).title}"
+        </p>  
+          :null
+      }
         <Container className="cntCenter" >
-        <Row >
+        <Row>
           
         {/* {data && data.length ? data.map((val,i)=>{
             return(
