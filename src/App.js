@@ -79,7 +79,7 @@ function App() {
                             <Route exact path='/' element={<Movies movie={data} setData={setData} previousPage={previousPage} nextPage={nextPage} page={page} />} />
                             <Route path='/movies' element={<Movies movie={data} setData={setData} previousPage={previousPage} nextPage={nextPage} page={page} />} />
                             <Route path='/movies/:id' element={<MovieDetail movie={data} />} />
-                            <Route path='/theaters' element={<Theaters />} />
+                            <Route path='/theaters' element={<Theaters previousPage={previousPage} nextPage={nextPage} page={page}/>} />
                             <Route path='/about' element={<About />} />
                         </Routes>
                       

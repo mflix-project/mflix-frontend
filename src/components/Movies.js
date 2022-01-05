@@ -1,7 +1,6 @@
 /*eslint-disable*/
 import Movie from './Movie.js';
-import {useState} from 'react';
-import { Container, Row, Dropdown, Card, Pagination} from 'react-bootstrap';
+import { Container, Row, Dropdown,  Pagination} from 'react-bootstrap';
 import queryString from 'query-string';
 
 export default function Movies(props){
@@ -26,7 +25,7 @@ export default function Movies(props){
  
     return(
       <>
- 
+      
       <div style={{paddingTop:'1%'}}>
         <h1 className='pageHeader'>Movies</h1>
         
@@ -52,21 +51,16 @@ export default function Movies(props){
       }
         <Container className="cntCenter" >
         <Row>
-          
-        {/* {data && data.length ? data.map((val,i)=>{
-            return(
-              <Movie key={i} movie={data} i={i} />
-            )
-          }):null} */}
           {
-            props.movie.map((val,i)=>{
+           props.movie&&props.movie.length? props.movie.map((val,i)=>{
               return(
                 <Movie key={i} movie={props.movie} i={i} />
               )
-            })
+            }):null
           }
         </Row> 
       </Container>
+     
       <Pagination className="center">
         <Pagination.Prev onClick={props.previousPage}/>
         <Pagination.Item disabled={true}>{props.page}</Pagination.Item>

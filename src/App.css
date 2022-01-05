@@ -58,3 +58,9 @@
   padding-bottom: 25%;
   background: rosybrown;
 }
+
+.tableStyle{
+  width: 60%;
+  margin: auto;
+  background-color: white;
+}
