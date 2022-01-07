@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function NavBar(props){
+export default function MovieNavBar(props){
     
     const [searchString, setSearchString] = useState('');
     const navigate= useNavigate();
@@ -45,15 +45,15 @@ export default function NavBar(props){
                     <Form onSubmit={handleSubmit}className="d-flex" >
                     <FormControl
                         type="search"
-                        placeholder="Search"
+                        placeholder="Title"
                         className="me-2"
                         aria-label="Search"
                         value={searchString}
                         onChange={(e)=>setSearchString(e.target.value)}
                     />
                     <Button  type='submit' variant="outline-dark">Search</Button>
-                            
                     </Form>
+                    
                 </Navbar.Collapse>
             </Container>
             </Navbar>
