@@ -18,13 +18,16 @@ export default function Movie(props){
     
 
     return(
-        <Col >
-            <Link className="linkStyle" to={'/movies/'+props.movie[props.i]._id}>
+        <>       
+         {console.log("movie")}
+        <Col>
+            <Link className="linkStyle" to={'/movies/'+props.movie[props.i]._id} >
             <img width={150} height = {220} src={poster()} onError={(e)=>{e.target.onerror = null; e.target.src=noImage}}/>
             <p className="movieName">{props.movie[props.i].title}</p>
             <p>{props.movie[props.i].year}</p>
             </Link>
         </Col>
+        </>
 
     )
 }

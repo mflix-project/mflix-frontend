@@ -42,7 +42,7 @@ export default function Theaters(){
         });
 
       return setRender(false);
-      }, [page,error,render]);
+      }, [page,error,render,data]);
       
       if (loading) return (<Loading />);
       if (error) return  (

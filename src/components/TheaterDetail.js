@@ -52,16 +52,11 @@ export default function TheaterDetail(){
                 );
             })
             .finally(() => setLoading(false))
-    }, [id2]);
+           
+    }, [id2,data]);
 
    
-    if (!loading && !data) {
-        return (
-            <Card className='p-3'>
-                <Card.Title>Unable to find data with id: {id2}</Card.Title>
-            </Card>
-        );
-    }
+  
     if (loading) return (<Loading />);
 
        
@@ -69,7 +64,8 @@ export default function TheaterDetail(){
     return(
         <>
          <TheaterNavBar setRender={setRender} setPage={setPage}/>     
-         <Container className="p-3 w-50">
+         <div className="mapStyle">
+         <Container className="p-3">
          <Card bg='light'>
                 <Card.Body
                     style={{
@@ -108,6 +104,7 @@ export default function TheaterDetail(){
                 </Marker>
             </MapContainer>
             </Container>
+            </div>
         </>
         
     )

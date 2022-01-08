@@ -81,6 +81,7 @@ export default function MovieDetail(){
 
     return (
         <>
+           {console.log("movieDetail")}
         <MovieNavBar setRender={setRender} setPage={setPage}/>     
         <Card className="p-4"  style={{ width: '70%' }}>
           <Container >
@@ -111,7 +112,7 @@ export default function MovieDetail(){
            {data.cast.join(", ")}
            <hr/>
            </Card.Text>
-           <Card.Title>Direcotrs</Card.Title>
+           <Card.Title>Directors</Card.Title>
            <Card.Text>
            {data.directors.join(", ")}   
            <hr/>

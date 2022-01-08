@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import axios from "axios";
 import Loading from './Loading';
 import { useEffect, useState} from 'react';
-import {  Card} from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 import MovieNavBar from './MovieNavBar';
 
 export default function Movies(){
@@ -23,7 +23,7 @@ export default function Movies(){
   
     let url;
     let query = queryString.parse(location.search);
-
+    
     if (query.title) {
         url = `https://mflix-jun.herokuapp.com/api/movies?title=${query.title}`;
       }
@@ -95,8 +95,9 @@ export default function Movies(){
              Filter
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={descendingOrder}>Latest</Dropdown.Item>
-            <Dropdown.Item onClick={ascendingOrder}>Oldest</Dropdown.Item>
+            <Dropdown.Item onClick={descendingOrder}>Latest</Dropdown.Item> 
+             <Dropdown.Item onClick={ascendingOrder}>Oldest</Dropdown.Item>
+            
           </Dropdown.Menu>
         </Dropdown>
         </div>
@@ -127,6 +128,7 @@ export default function Movies(){
         <Pagination.Item disabled={true}>{page}</Pagination.Item>
         <Pagination.Next onClick={nextPage} />
       </Pagination>
+      
       </div>
       }
       

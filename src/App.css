@@ -70,4 +70,15 @@
 .leaflet-container{
  
   height:100vh;
+ 
+}
+.mapStyle{
+  width: 60%;
+  margin: auto;
+}
+.accordionStyle{
+  margin: auto;
+  width: 70%;
+  padding: 3%;
+  height: 100vh;
 }
