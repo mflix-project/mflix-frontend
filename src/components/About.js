@@ -39,12 +39,12 @@ export default function About() {
                         <br />
                             <h5>Contact</h5>
                             <h5>
-                                <a href='www.linkedin.com/in/seogjun-hong/'>
+                                <a href='https://www.linkedin.com/in/seogjun-hong/'>
                                     <Badge bg='primary'> LinkedIn</Badge>
                                 </a>
                                 {'  '}
 
-                                <a href='https://https://github.com/seog-jun'>
+                                <a href='https://github.com/seog-jun'>
                                     <Badge bg='dark'>GitHub</Badge>
                                 </a>
                                 {'  '}
