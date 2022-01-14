@@ -8,8 +8,6 @@ Link to [**Mflix**](https://mflix-project.vercel.app/)
 
 &nbsp;
 
----
-
 ## Movies
 
 ### Main Page
@@ -24,7 +22,7 @@ Link to [**Mflix**](https://mflix-project.vercel.app/)
 
 ![Searching](./demo/searching.gif)
 
----
+&nbsp;
 
 ## Theaters
 
@@ -35,8 +33,7 @@ Link to [**Mflix**](https://mflix-project.vercel.app/)
 ### Searching
 
 ![Searching](./demo/searchingTheater.gif)
-
----
+&nbsp;
 
 ## Built With
 
