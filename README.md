@@ -6,15 +6,37 @@ Link to [**Mflix**](https://mflix-project.vercel.app/)
 
 &nbsp;
 
-## Main Page (Movies)
-
 ---
+
+## Movies
+
+### Main Page
 
 ![Main Page](./demo/moviePage.gif)
 
-## Built With
+### Sorting
+
+![Soring](./demo/sorting.gif)
+
+### Searching
+
+![Searching](./demo/searching.gif)
 
 ---
+
+## Theaters
+
+### Main Page
+
+![Main Page](./demo/theaterPage.gif)
+
+### Searching
+
+![Searching](./demo/searchingTheater.gif)
+
+---
+
+## Built With
 
 - HTML
 - CSS
