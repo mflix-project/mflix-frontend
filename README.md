@@ -10,7 +10,7 @@ Link to [**Mflix**](https://mflix-project.vercel.app/)
 
 ---
 
-![Main Page](<./demo/mainPage(movies).gif>)
+![Main Page](./demo/moviePage.gif)
 
 ## Built With
 
