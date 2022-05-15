@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock*
 
+mflix-backend-master
+*.zip
+
 # ppt
 *.pptx
