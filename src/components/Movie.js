@@ -18,7 +18,6 @@ export default function Movie(props) {
 
   return (
     <>
-      {console.log("movie")}
       <Col>
         <Link className="linkStyle" to={"/movies/" + state.movies[props.i]._id}>
           <img

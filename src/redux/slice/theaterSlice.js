@@ -1,18 +1,17 @@
 /* eslint-disable */
 import { createSlice } from "@reduxjs/toolkit";
 
-let movies = createSlice({
-  name: "movies",
+let theaters = createSlice({
+  name: "theaters",
   initialState: null,
   reducers: {
-    saveMovies(state, action) {
+    saveTheaters(state, action) {
       state = action.payload;
-      console.log(state);
       return state;
     },
   },
 });
 
-export let { saveMovies } = movies.actions;
+export let { saveTheaters } = theaters.actions;
 
-export default movies;
+export default theaters;

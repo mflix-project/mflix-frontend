@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import MovieNavBar from "./MovieNavBar";
 import { useDispatch, useSelector } from "react-redux";
-import { save } from "../redux/slice/movieSlice";
+import { saveMovies } from "../redux/slice/movieSlice";
 
 export default function Movies() {
   const perPage = 28;
@@ -34,8 +34,7 @@ export default function Movies() {
 
     axios(url)
       .then((response) => {
-        console.log(response.data);
-        dispatch(save(response.data));
+        dispatch(saveMovies(response.data));
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
