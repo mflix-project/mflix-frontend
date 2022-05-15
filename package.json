@@ -13,7 +13,7 @@
     "intl": "^1.2.5",
     "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "popper.js": "^1.16.1",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
