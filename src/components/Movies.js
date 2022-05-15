@@ -7,14 +7,20 @@ import Loading from "./Loading";
 import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import MovieNavBar from "./MovieNavBar";
+import { useDispatch, useSelector } from "react-redux";
+import { save } from "../redux/slice/movieSlice";
 
 export default function Movies() {
   const perPage = 28;
   const [page, setPage] = useState(1);
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [render, setRender] = useState(false);
+
+  let state = useSelector((state) => {
+    return state;
+  });
+  let dispatch = useDispatch();
 
   useEffect(() => {
     let url;
@@ -28,7 +34,8 @@ export default function Movies() {
 
     axios(url)
       .then((response) => {
-        setData(response.data);
+        console.log(response.data);
+        dispatch(save(response.data));
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -51,7 +58,7 @@ export default function Movies() {
     );
 
   function descendingOrder() {
-    var movieArray = [...data];
+    var movieArray = [...state.movies];
     var descendingArray = movieArray.sort((a, b) => {
       return b.year - a.year;
     });
@@ -59,7 +66,7 @@ export default function Movies() {
   }
 
   function ascendingOrder() {
-    var movieArray = [...data];
+    var movieArray = [...state.movies];
     var ascendingArray = movieArray.sort((a, b) => {
       return a.year - b.year;
     });
@@ -92,7 +99,7 @@ export default function Movies() {
       </div>
       <br></br>
 
-      {!Array.isArray(data) || data.length === 0 ? (
+      {!Array.isArray(state.movies) || state.movies.length === 0 ? (
         <p className="non-found">
           No Results Found For "{queryString.parse(location.search).title}"
         </p>
@@ -100,9 +107,9 @@ export default function Movies() {
         <div>
           <Container className="cntCenter">
             <Row>
-              {data && data.length
-                ? data.map((val, i) => {
-                    return <Movie key={i} movie={data} i={i} />;
+              {state.movies && state.movies.length
+                ? state.movies.map((val, i) => {
+                    return <Movie key={i} movie={state.movies} i={i} />;
                   })
                 : null}
             </Row>

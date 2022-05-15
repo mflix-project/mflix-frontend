@@ -2,11 +2,15 @@
 import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import noImage from "./noImage.png";
-
+import { useSelector } from "react-redux";
 export default function Movie(props) {
+  let state = useSelector((state) => {
+    return state;
+  });
+
   function poster() {
-    if (props.movie[props.i].poster) {
-      return props.movie[props.i].poster;
+    if (state.movies[props.i].poster) {
+      return state.movies[props.i].poster;
     } else {
       return noImage;
     }
@@ -16,7 +20,7 @@ export default function Movie(props) {
     <>
       {console.log("movie")}
       <Col>
-        <Link className="linkStyle" to={"/movies/" + props.movie[props.i]._id}>
+        <Link className="linkStyle" to={"/movies/" + state.movies[props.i]._id}>
           <img
             width={150}
             height={220}
@@ -26,8 +30,8 @@ export default function Movie(props) {
               e.target.src = noImage;
             }}
           />
-          <p className="movieName">{props.movie[props.i].title}</p>
-          <p>{props.movie[props.i].year}</p>
+          <p className="movieName">{state.movies[props.i].title}</p>
+          <p>{state.movies[props.i].year}</p>
         </Link>
       </Col>
     </>
