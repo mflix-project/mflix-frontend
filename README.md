@@ -2,7 +2,7 @@
 
 Welcome to Mflix:grinning:
 
-This wep application displays list of movies and theaters in the USA. You can find information about a movie that you're looking for by typing a title of the movie. Also, you can check theaters in the USA, and we offer address of the theater with free map!
+This web application displays a list of movies and theaters in the USA. You can find information about a movie that you're looking for by typing the title of the movie. Also, you can check theaters in the USA, and we offer the theater’s address with a free map!
 
 Link to [**Mflix**](https://mflix-project.vercel.app/)
 
