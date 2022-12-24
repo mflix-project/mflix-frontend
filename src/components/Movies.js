@@ -21,9 +21,9 @@ export default function Movies() {
     let query = queryString.parse(location.search);
 
     if (query.title) {
-      url = `https://mflix-jun.herokuapp.com/api/movies?title=${query.title}`;
+      url = `https://mflix-james.herokuapp.com/api/movies?title=${query.title}`;
     } else {
-      url = `https://mflix-jun.herokuapp.com/api/movies?page=${page}&perPage=${perPage}`;
+      url = `https://mflix-james.herokuapp.com/api/movies?page=${page}&perPage=${perPage}`;
     }
 
     axios(url)
