@@ -9,7 +9,7 @@ import { Card } from "react-bootstrap";
 import MovieNavBar from "./MovieNavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { saveMovies } from "../redux/slice/movieSlice";
-
+//
 export default function Movies() {
   const perPage = 28;
   const [page, setPage] = useState(1);

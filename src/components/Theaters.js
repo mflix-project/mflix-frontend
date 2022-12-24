@@ -26,9 +26,9 @@ export default function Theaters() {
   let query = queryString.parse(location.search);
 
   if (query.city) {
-    url = `https://mflix-jun.herokuapp.com/api/theaters?page=${page}&perPage=${perPage}&city=${query.city}`;
+    url = `https://mflix-james.herokuapp.com/api/theaters?page=${page}&perPage=${perPage}&city=${query.city}`;
   } else {
-    url = `https://mflix-jun.herokuapp.com/api/theaters?page=${page}&perPage=${perPage}`;
+    url = `https://mflix-james.herokuapp.com/api/theaters?page=${page}&perPage=${perPage}`;
   }
 
   useEffect(() => {
